@@ -7,7 +7,218 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <h1>holamundo</h1>
+    <div class="padre">
+
+        <div class="hijo">
+
+            <center>
+
+                <h1>Inicio</h1>
+
+            </center>
+
+
+            <center>
+
+                <form onsubmit="iniciarSesion(event)">
+
+                    <label for="username">Usuario:</label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        required
+                    >
+
+                    <br><br>
+
+
+                    <label for="password">Contraseña:</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        required
+                    >
+
+                    <br><br>
+
+
+                    <input
+                        type="submit"
+                        value="Iniciar sesión"
+                    >
+
+                </form>
+
+            </center>
+
+        </div>
+
+
+
+
+        <div class="hijo2">
+
+            <center>
+
+                <h1>Registro</h1>
+
+
+                <label>Usuario:</label>
+
+                <input
+                    type="text"
+                    id="usuarioRegistro"
+                >
+
+                <br><br>
+
+
+                <label>Contraseña:</label>
+
+                <input
+                    type="password"
+                    id="contrasenaRegistro"
+                >
+
+                <br><br>
+
+
+                <label>Confirmar contraseña:</label>
+
+                <input
+                    type="password"
+                    id="confirmarRegistro"
+                >
+
+                <br><br>
+
+
+                <button onclick="registrar()">
+
+                    Registrarse
+
+                </button>
+
+
+            </center>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        function registrar() {
+
+            let usuario = document.getElementById("usuarioRegistro").value;
+
+            let contrasena = document.getElementById("contrasenaRegistro").value;
+
+            let confirmar = document.getElementById("confirmarRegistro").value;
+
+            if (
+                usuario == "" ||
+                contrasena == "" ||
+                confirmar == ""
+            ) {
+
+                alert("Debe llenar todos los campos");
+
+                return;
+
+            }
+
+            if (contrasena != confirmar) {
+
+                alert("Las contraseñas no coinciden");
+
+                return;
+
+            }
+
+            let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+            let usuarioExiste = usuarios.find(function(user) {
+
+                return user.usuario == usuario;
+
+            });
+
+
+            if (usuarioExiste) {
+
+                alert("Ese usuario ya existe");
+
+                return;
+
+            }
+
+            let nuevoUsuario = {
+
+                usuario: usuario,
+                contrasena: contrasena
+
+            };
+
+
+            usuarios.push(nuevoUsuario);
+
+
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+
+            alert("Usuario registrado correctamente");
+
+            document.getElementById("usuarioRegistro").value = "";
+
+            document.getElementById("contrasenaRegistro").value = "";
+
+            document.getElementById("confirmarRegistro").value = "";
+
+        }
+
+
+
+        function iniciarSesion(event) {
+
+            event.preventDefault();
+
+
+            let usuario = document.getElementById("username").value;
+
+            let contrasena = document.getElementById("password").value;
+
+
+            let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+            let usuarioEncontrado = usuarios.find(function(user) {
+
+                return user.usuario == usuario &&
+                       user.contrasena == contrasena;
+
+            });
+
+
+            if (usuarioEncontrado) {
+
+                alert("Inicio de sesión correcto");
+                
+                } else {
+
+                alert("Usuario o contraseña incorrectos");
+
+            }
+
+
+        }
+
+    </script>
 
 
     <script src="codig.js"></script>
