@@ -3,12 +3,8 @@ function registrar() {
     let contrasena = document.getElementById("contrasenaRegistro").value;
     let confirmar = document.getElementById("confirmarRegistro").value;
 
-    if (
-        usuario == "" ||
-        contrasena == "" ||
-        confirmar == ""
-    ) {
-        alert("Debe llenar todos los campos primo");
+    if (usuario == "" || contrasena == "" || confirmar == "") {
+        alert("Debe llenar todos los campos");
         return;
     }
 
@@ -24,7 +20,7 @@ function registrar() {
     });
 
     if (usuarioExiste) {
-        alert("Ese usuario ya existe brotheeer");
+        alert("Ese usuario ya existe");
         return;
     }
 
@@ -56,8 +52,7 @@ function iniciarSesion(event) {
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
     let encontrado = usuarios.find(function(user) {
-        return user.usuario == usuario &&
-               user.contrasena == contrasena;
+        return user.usuario == usuario && user.contrasena == contrasena;
     });
 
     if (encontrado) {
