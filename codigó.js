@@ -56,9 +56,9 @@ document.getElementById("formLogin").addEventListener("submit", function(event) 
     });
 
     if (encontrado) {
-        alert("Inicio de sesión correcto");
-        window.location.href = "index4.html";
-    } else {
-        alert("Usuario o contraseña incorrectos");
-    }
+    alert("Inicio de sesión correcto, primo");
+    window.location.href = "inicio.html";
+} else {
+    alert("Usuario o contraseña incorrectos");
+}
 });
