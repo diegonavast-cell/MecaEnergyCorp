@@ -33,7 +33,7 @@ document.getElementById("btnRegistrar").addEventListener("click", function() {
 
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-    alert("Usuario registrado correctamente");
+    alert("Usuario registrado correctamente primo");
 
     document.getElementById("usuarioRegistro").value = "";
     document.getElementById("contrasenaRegistro").value = "";
