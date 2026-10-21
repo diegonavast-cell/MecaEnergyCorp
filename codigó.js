@@ -1,4 +1,4 @@
-function registrar() {
+document.getElementById("btnRegistrar").addEventListener("click", function() {
     let usuario = document.getElementById("usuarioRegistro").value;
     let contrasena = document.getElementById("contrasenaRegistro").value;
     let confirmar = document.getElementById("confirmarRegistro").value;
@@ -41,9 +41,9 @@ function registrar() {
 
     document.getElementById("seccionRegistro").style.display = "none";
     document.getElementById("seccionLogin").style.display = "block";
-}
+});
 
-function iniciarSesion(event) {
+document.getElementById("formLogin").addEventListener("submit", function(event) {
     event.preventDefault();
 
     let usuario = document.getElementById("username").value;
@@ -61,4 +61,4 @@ function iniciarSesion(event) {
     } else {
         alert("Usuario o contraseña incorrectos");
     }
-}
+});
