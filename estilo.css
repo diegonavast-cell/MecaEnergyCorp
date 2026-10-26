@@ -309,26 +309,123 @@ input[type="submit"] {
     margin: 0;
 }
 
-/* Adaptación para teléfonos */
-@media screen and (max-width: 768px) {
-    body {
-        width: 100%;
-        margin: 0;
-        padding: 10px;
-        box-sizing: border-box;
+
+/* TABLETS */
+@media screen and (max-width: 900px) {
+
+    .abuelo {
+        gap: 20px;
+        padding: 130px 20px 100px;
     }
 
-    img {
-        max-width: 100%;
+    .nieto1,
+    .nieto2 {
+        width: calc(50% - 10px);
+        padding: 20px;
+    }
+
+    .marca img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .barra-navegacion {
+        padding: 0 20px;
+    }
+
+    .enlaces {
+        gap: 8px;
+    }
+
+    .enlaces a {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+
+/* TELEFONOS */
+@media screen and (max-width: 600px) {
+
+    /* Barra superior */
+    .barra-navegacion {
         height: auto;
+        min-height: 80px;
+        padding: 10px 12px;
+        gap: 10px;
     }
 
-    * {
-        box-sizing: border-box;
+    .marca img {
+        width: 48px;
+        height: 48px;
     }
 
-    /* Evita que los elementos se salgan de la pantalla */
-    .container {
-        max-width: 100%;
+    .enlaces {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 3px;
+    }
+
+    .enlaces a {
+        font-size: 12px;
+        padding: 7px 5px;
+    }
+
+    /* Cajas de Misión, Visión y Valores */
+    .abuelo {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 110px 15px 100px;
+    }
+
+    .nieto1,
+    .nieto2 {
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
+        border-radius: 25px;
+    }
+
+    /* Títulos */
+    .bloque-info h2 {
+        font-size: 20px;
+    }
+
+    .titulo-valores {
+        font-size: 22px;
+    }
+
+    .bloque-info h3 {
+        font-size: 16px;
+    }
+
+    .bloque-info p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .icono-info {
+        font-size: 28px;
+        min-width: 35px;
+    }
+
+    /* Logo de Instagram y franja inferior */
+    .caja-naranja {
+        height: 65px;
+    }
+
+    .logo-instagram {
+        width: 30px;
+        height: 30px;
+    }
+
+    .instagram {
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .instagram strong {
+        font-size: 13px;
     }
 }
