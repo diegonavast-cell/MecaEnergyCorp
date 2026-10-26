@@ -309,93 +309,26 @@ input[type="submit"] {
     margin: 0;
 }
 
-/* DISEÑO RESPONSIVE PARA TELEFONOS */
+/* Adaptación para teléfonos */
 @media screen and (max-width: 768px) {
-
     body {
-        margin: 0;
         width: 100%;
-        overflow-x: hidden;
-    }
-
-    /* Barra de navegación */
-    .barra-navegacion {
-        height: auto;
+        margin: 0;
         padding: 10px;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .marca img {
-        width: 65px;
-        height: 65px;
-    }
-
-    .enlaces {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-    }
-
-    /* Cajas de registro e inicio de sesión */
-    .padre {
-        flex-direction: column;
-        align-items: center;
-        padding: 15px;
-        gap: 20px;
-    }
-
-    .hijo,
-    .hijo2 {
-        width: 100%;
-        max-width: 400px;
-        margin: 0;
         box-sizing: border-box;
     }
 
-    /* Secciones de Misión, Visión y Valores */
-    .abuelo {
-        flex-direction: column;
-        padding: 20px 15px;
-        gap: 20px;
-    }
-
-    .nieto1,
-    .nieto2 {
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    /* Imágenes adaptables */
     img {
         max-width: 100%;
         height: auto;
     }
 
-    /* Texto */
-    h1 {
-        font-size: 26px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    p {
-        overflow-wrap: break-word;
-    }
-
-    /* Barra inferior de Instagram */
-    .caja-naranja {
-        height: 60px;
-        padding: 10px;
+    * {
         box-sizing: border-box;
     }
 
-    .logo-instagram {
-        max-width: 30px;
-        height: auto;
+    /* Evita que los elementos se salgan de la pantalla */
+    .container {
+        max-width: 100%;
     }
 }
