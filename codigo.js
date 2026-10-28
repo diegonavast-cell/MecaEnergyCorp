@@ -33,7 +33,7 @@ document.getElementById("btnRegistrar").addEventListener("click", function() {
 
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-    alert("Usuario registrado correctamente primo");
+    alert("Usuario registrado correctamente");
 
     document.getElementById("usuarioRegistro").value = "";
     document.getElementById("contrasenaRegistro").value = "";
@@ -56,9 +56,36 @@ document.getElementById("formLogin").addEventListener("submit", function(event) 
     });
 
     if (encontrado) {
-    alert("Inicio de sesión correcto, primo");
+    alert("Inicio de sesión correcto");
     window.location.href = "inicio.html";
 } else {
     alert("Usuario o contraseña incorrectos");
 }
 });
+
+
+const enlaceInicioSesion = document.getElementById("irInicioSesion");
+
+if (enlaceInicioSesion) {
+    enlaceInicioSesion.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        document.getElementById("seccionRegistro").style.display = "none";
+        document.getElementById("seccionLogin").style.display = "block";
+    });
+}
+
+
+const botonCerrarSesion = document.getElementById("cerrarSesion");
+
+if (botonCerrarSesion) {
+    botonCerrarSesion.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Eliminar los datos de sesion de este sitio
+        sessionStorage.clear();
+
+        // Volver a la pagina de registro
+        window.location.href = "index.html";
+    });
+}

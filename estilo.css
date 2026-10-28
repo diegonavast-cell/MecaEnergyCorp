@@ -853,3 +853,41 @@ img {
         font-size: 14px;
     }
 }
+
+
+/* Alineacion del inicio de sesion en tablets */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+
+    #seccionLogin {
+        text-align: left;
+    }
+
+    #seccionLogin form {
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    #seccionLogin label {
+        display: block;
+        width: 100%;
+        margin: 0 0 8px;
+        text-align: left;
+    }
+
+    #seccionLogin input[type="text"],
+    #seccionLogin input[type="password"] {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 18px;
+    }
+
+    #seccionLogin input[type="submit"] {
+        display: block;
+        margin-top: 10px;
+    }
+}
+p{
+    color:orange;
+}

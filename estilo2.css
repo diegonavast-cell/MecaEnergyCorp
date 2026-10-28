@@ -1,0 +1,415 @@
+.fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* =========================================
+   MECAENERGYCORP
+   PÁGINA PRINCIPAL
+========================================= */
+
+/* COLORES Y AJUSTES GENERALES */
+
+:root {
+    --azul-oscuro: #061727;
+    --azul-profundo: #0b1f33;
+    --turquesa: #0093ab;
+    --blanco: #ffffff;
+    --gris-claro: #dce5ed;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(ellipse at 75% 45%,
+            #123650 0%,
+            var(--azul-profundo) 45%,
+            var(--azul-oscuro) 100%);
+    color: var(--blanco);
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================
+   BARRA DE NAVEGACIÓN
+========================================= */
+
+.barra-navegacion {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    min-height: 90px;
+    padding: 12px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    background-color: rgba(6, 23, 39, 0.92);
+    border-bottom: 1px solid rgba(0, 147, 171, 0.45);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.marca img {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.enlaces {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.enlaces a {
+    padding: 11px 14px;
+
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+
+    border-radius: 7px;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.enlaces a:hover {
+    background-color: orange;
+    color: #0b1f33;
+}
+
+
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+========================================= */
+
+.inicio {
+    min-height: calc(100vh - 90px);
+    padding: 55px 8% 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.presentacion {
+    width: 100%;
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: minmax(250px, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: 65px;
+}
+
+
+/* =========================================
+   LOGO PRINCIPAL
+========================================= */
+
+.contenedor-logo {
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 12px;
+    border: 1px solid rgba(0, 147, 171, 0.3);
+    border-radius: 24px;
+
+    background-color: rgba(3, 17, 30, 0.55);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.3s ease;
+
+    margin-top: -30px;
+}
+
+.contenedor-logo:hover {
+    transform: translateY(-5px);
+}
+
+.logo-principal {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 14px;
+}
+
+
+/* =========================================
+   ESLOGAN Y DESCRIPCIÓN
+========================================= */
+
+.contenido-inicio {
+    width: 100%;
+    max-width: 560px;
+    background-color: #0b1f33;
+    padding: 25px;
+    border-radius: 50px;
+    margin-top: -30px;
+}
+
+.etiqueta {
+    margin-bottom: 22px;
+
+    color: #45c8d9;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    line-height: 1.8;
+}
+
+.contenido-inicio h1 {
+    color: var(--blanco);
+    font-size: clamp(38px, 5vw, 68px);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -2px;
+}
+
+.contenido-inicio h1 span {
+    display: block;
+    color: #16b4c8;
+}
+
+.linea-decorativa {
+    width: 90px;
+    height: 4px;
+    margin: 25px 0;
+
+    background: linear-gradient(to right,
+            var(--turquesa),
+            #45c8d9);
+
+    border-radius: 10px;
+}
+
+.descripcion {
+    max-width: 540px;
+
+    color: var(--gris-claro);
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media screen and (max-width: 900px) {
+
+    .barra-navegacion {
+        padding: 12px 4%;
+        gap: 12px;
+    }
+
+    .marca img {
+        width: 62px;
+        height: 62px;
+    }
+
+    .enlaces {
+        gap: 3px;
+    }
+
+    .enlaces a {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .inicio {
+        padding: 45px 5% 25px;
+    }
+
+    .presentacion {
+        grid-template-columns: minmax(200px, 0.8fr) minmax(0, 1.2fr);
+        gap: 30px;
+    }
+
+    .contenido-inicio h1 {
+        font-size: clamp(36px, 5.5vw, 52px);
+    }
+
+    .descripcion {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+}
+
+
+/* =========================================
+   TELÉFONOS
+========================================= */
+
+@media screen and (max-width: 600px) {
+
+    .barra-navegacion {
+        min-height: auto;
+        padding: 12px 14px;
+
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .marca img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .enlaces {
+        width: 100%;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .enlaces a {
+        padding: 9px 8px;
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .inicio {
+        min-height: auto;
+        padding: 38px 20px 25px;
+    }
+
+    .presentacion {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .contenedor-logo {
+        width: 100%;
+        max-width: 270px;
+        padding: 8px;
+        border-radius: 18px;
+    }
+
+    .logo-principal {
+        max-width: 250px;
+    }
+
+    .contenido-inicio {
+        text-align: center;
+    }
+
+    .etiqueta {
+        margin-bottom: 15px;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .contenido-inicio h1 {
+        font-size: clamp(36px, 10vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .linea-decorativa {
+        width: 65px;
+        margin: 20px auto;
+    }
+
+    .descripcion {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .detalle-inferior {
+        margin-top: 35px;
+        gap: 10px;
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .detalle-inferior span {
+        width: 25px;
+    }
+}
+
+
+/* =========================================
+   TELÉFONOS PEQUEÑOS
+========================================= */
+
+@media screen and (max-width: 360px) {
+
+    .enlaces a {
+        padding: 8px 5px;
+        font-size: 10px;
+    }
+
+    .inicio {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .contenedor-logo {
+        max-width: 230px;
+    }
+
+    .contenido-inicio h1 {
+        font-size: 34px;
+    }
+
+    .descripcion {
+        font-size: 20px;
+    }
+}
+
+.caja-naranja {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: orange;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
