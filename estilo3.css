@@ -199,3 +199,488 @@ img {
     line-height: 1.5;
     margin: 0;
 }
+
+/* =========================================
+   MECAENERGYCORP
+   DISEÑO RESPONSIVE
+========================================= */
+
+/* COLORES */
+
+:root {
+    --azul-oscuro: #061727;
+    --azul-profundo: #0b1f33;
+    --turquesa: #0093ab;
+    --blanco: #ffffff;
+    --gris-claro: #dce5ed;
+    --naranja: orange;
+}
+
+/* AJUSTES GENERALES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            ellipse at 75% 45%,
+            #123650 0%,
+            var(--azul-profundo) 45%,
+            var(--azul-oscuro) 100%
+        );
+
+    color: var(--blanco);
+    overflow-x: hidden;
+}
+
+/* IMÁGENES */
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* =========================================
+   BARRA DE NAVEGACIÓN
+========================================= */
+
+.barra-navegacion {
+    position: relative;
+    z-index: 10;
+
+    width: 100%;
+    min-height: 90px;
+
+    padding: 12px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 25px;
+
+    background-color: rgba(6, 23, 39, 0.94);
+
+    border-bottom: 1px solid rgba(0, 147, 171, 0.45);
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* LOGO */
+
+.marca {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.marca img {
+    width: 76px;
+    height: 76px;
+
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* ENLACES */
+
+.enlaces {
+    display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.enlaces a {
+    padding: 11px 14px;
+
+    color: var(--blanco);
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    border-radius: 7px;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.enlaces a:hover,
+.enlaces a.activo {
+    background-color: var(--naranja);
+    color: var(--azul-profundo);
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+
+.caja {
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+    padding: 45px 4% 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 25px;
+}
+
+/* =========================================
+   CAJAS PRINCIPALES
+========================================= */
+
+.caja-hijo1,
+.caja-hijo2 {
+    background-color: rgba(11, 31, 51, 0.96);
+
+    border: 1px solid rgba(0, 147, 171, 0.25);
+    border-radius: 12px;
+
+    padding: 28px;
+
+    min-width: 0;
+
+    /* Permite que ambas cajas compartan el espacio */
+    flex: 1 1 0;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================
+   BLOQUES DE INFORMACIÓN
+========================================= */
+
+.bloque-info {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 18px;
+    margin-bottom: 25px;
+
+    min-width: 0;
+}
+
+.bloque-info:last-child {
+    margin-bottom: 0;
+}
+
+/* ICONOS */
+
+.icono-info {
+    font-size: 35px;
+
+    min-width: 45px;
+    flex-shrink: 0;
+
+    color: var(--naranja);
+    text-align: center;
+}
+
+/* CONTENIDO DE CADA BLOQUE */
+
+.contenido-info {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+/* TÍTULOS */
+
+.bloque-info h2 {
+    color: var(--naranja);
+
+    margin-bottom: 10px;
+    font-size: 23px;
+}
+
+.titulo-valores {
+    color: var(--naranja);
+
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.bloque-info h3 {
+    color: var(--blanco);
+
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* PÁRRAFOS */
+
+.bloque-info p {
+    color: #e1e8ef;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+/* =========================================
+   BARRA NARANJA INFERIOR
+========================================= */
+
+.caja-naranja {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 35px;
+
+    background-color: var(--naranja);
+    z-index: 10;
+}
+
+/* =========================================
+   TABLETS
+   Pantallas de hasta 1000px
+========================================= */
+
+@media screen and (max-width: 1000px) {
+
+    /* La navegación se organiza en dos filas */
+    .barra-navegacion {
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 12px;
+        padding: 15px 3%;
+    }
+
+    .marca img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .enlaces {
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .enlaces a {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    /* Las dos cajas siguen juntas si hay espacio */
+    .caja {
+        padding: 35px 3% 65px;
+        gap: 18px;
+    }
+
+    .caja-hijo1,
+    .caja-hijo2 {
+        padding: 22px;
+    }
+
+    .bloque-info {
+        gap: 12px;
+    }
+
+    .icono-info {
+        min-width: 35px;
+        font-size: 29px;
+    }
+
+    .bloque-info h2 {
+        font-size: 21px;
+    }
+
+    .titulo-valores {
+        font-size: 23px;
+    }
+
+    .bloque-info h3 {
+        font-size: 17px;
+    }
+
+    .bloque-info p {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+}
+
+/* =========================================
+   TELÉFONOS
+   Pantallas de hasta 600px
+========================================= */
+
+@media screen and (max-width: 600px) {
+
+    /* NAVEGACIÓN */
+
+    .barra-navegacion {
+        padding: 12px 14px;
+        gap: 12px;
+    }
+
+    .marca img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .enlaces {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+    .enlaces a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-height: 40px;
+
+        padding: 9px 6px;
+
+        text-align: center;
+        font-size: 12px;
+
+        overflow-wrap: anywhere;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+
+    .caja {
+        flex-direction: column;
+        align-items: stretch;
+
+        padding: 22px 14px 65px;
+
+        gap: 22px;
+    }
+
+    /* LAS DOS CAJAS OCUPAN TODO EL ANCHO */
+
+    .caja-hijo1,
+    .caja-hijo2 {
+        width: 100%;
+        flex: 1 1 auto;
+
+        padding: 22px 18px;
+
+        border-radius: 10px;
+    }
+
+    /* BLOQUES DE INFORMACIÓN */
+
+    .bloque-info {
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .icono-info {
+        min-width: 32px;
+        font-size: 27px;
+    }
+
+    /* TÍTULOS */
+
+    .bloque-info h2 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .titulo-valores {
+        font-size: 23px;
+        margin-bottom: 24px;
+    }
+
+    .bloque-info h3 {
+        font-size: 17px;
+    }
+
+    /* TEXTO */
+
+    .bloque-info p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* BARRA INFERIOR */
+
+    .caja-naranja {
+        height: 20px;
+    }
+}
+
+/* =========================================
+   TELÉFONOS MUY ESTRECHOS
+   Pantallas de hasta 360px
+========================================= */
+
+@media screen and (max-width: 360px) {
+
+    .enlaces {
+        grid-template-columns: 1fr;
+    }
+
+    .caja {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .caja-hijo1,
+    .caja-hijo2 {
+        padding: 18px 14px;
+    }
+
+    .bloque-info {
+        gap: 9px;
+    }
+
+    .icono-info {
+        min-width: 28px;
+        font-size: 24px;
+    }
+
+    .bloque-info h2 {
+        font-size: 18px;
+    }
+
+    .bloque-info p {
+        font-size: 13px;
+    }
+}
