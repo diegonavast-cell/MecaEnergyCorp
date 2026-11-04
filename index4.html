@@ -6,6 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="estilo4.css">
+    <style>
+        /* Ocultar inicialmente todos los objetivos y metas */
+        .principal > div, .principal2 > div {
+            display: none !important;
+        }
+
+        /* Estilos para el mensaje de bienvenida y el control de botones */
+        .bienvenida-container {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            margin: 40px auto;
+            max-width: 700px;
+        }
+
+        .bienvenida-container h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .bienvenida-container p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        /* Botón para avanzar/mostrar los objetivos en orden */
+        .btn-siguiente {
+            padding: 12px 24px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .btn-siguiente:hover {
+            background-color: #e68900;
+        }
+
+        /* Estilo para mostrar el objetivo y meta seleccionados en el centro */
+        .principal.mostrar-activo, .principal2.mostrar-activo {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .principal.mostrar-activo > div.activo-obj,
+        .principal2.mostrar-activo > div.activo-meta {
+            display: block !important;
+            margin: 0 auto;
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+
+        /* Botón de reinicio o volver a inicio */
+        #btn-reiniciar {
+            display: none;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,7 +87,6 @@
 
     <!-- BARRA DE NAVEGACIÓN -->
     <nav class="barra-navegacion">
-
         <a href="#inicio" class="marca" aria-label="Ir al inicio">
             <img src="img/MecaEnergyCorp_ Conectamos destinos.png" alt="Logo de MecaEnergyCorp" id="logo">
         </a>
@@ -25,12 +98,22 @@
             <a href="">Nosotros</a>
             <a href="index.html" id="cerrarSesion">Cerrar sesión</a>
         </div>
-
     </nav>
 
+    <!-- MENSAJE DE BIENVENIDA Y BOTÓN PARA EMPEZAR EN ORDEN -->
+    <div id="seccion-bienvenida" class="bienvenida-container">
+        <h1>¡Bienvenido a MecaEnergyCorp!</h1>
+        <p>Acá encontrarás nuestros objetivos estratégicos y sus respectivas metas diseñadas para el desarrollo del transporte mecánico.</p>
+        <button class="btn-siguiente" onclick="siguientePaso()">Mostrar Primer Objetivo</button>
+    </div>
+
+    <!-- BOTÓN PARA REINICIAR / VOLVER AL INICIO -->
+    <div style="text-align: center;">
+        <button id="btn-reiniciar" onclick="reiniciarVista()">Volver al inicio</button>
+    </div>
 
     <div class="principal">
-        <div class="objetivos">
+        <div class="objetivos" id="obj1">
             <h2 style="text-align: center;">OBJETIVO1</h2>
             <br>
             <p>1. Innovación en el transporte mecánico</p>
@@ -38,23 +121,20 @@
                 Objetivo: Desarrollar sistemas de transporte por cable que aprovechen los principios de la energía
                 mecánica para facilitar el desplazamiento de personas entre diferentes puntos geográficos.</p>
             <br>
-
-
         </div>
 
 
-        <div class="metas">
+        <div class="metas" id="obj2">
             <h2 style="text-align: center;">OBJETIVO2</h2>
             <br>
             <p>2. Seguridad y eficiencia operativa</p>
             <p>
                 Objetivo: Garantizar que los sistemas desarrollados por MecaEnergyCorp prioricen la seguridad de los
                 usuarios, la eficiencia mecánica y la confiabilidad de sus mecanismos.</p>
-
         </div>
 
 
-        <div class="otro">
+        <div class="otro" id="obj3">
             <h2 style="text-align: center;">OBJETIVO3</h2>
             <br>
             <p>3. Conectividad y desarrollo sostenible</p>
@@ -62,14 +142,10 @@
                 Objetivo: Promover alternativas de transporte que faciliten la conexión entre destinos, aprovechen las
                 características del entorno y contribuyan al desarrollo de nuevas experiencias de movilidad.</p>
         </div>
-
-
     </div>
 
     <div class="principal2">
-
-
-        <div class="meta1">
+        <div class="meta1" id="meta1">
             <h2 style="text-align: center;">META</h2>
             <p>1 Diseñar y completar un prototipo funcional de transporte por cable que demuestre la transmisión de
                 energía mecánica. Primeros 3 meses</p>
@@ -84,7 +160,7 @@
                 sistemas de transporte. Primeros 12 meses</p>
         </div>
 
-        <div class="meta2">
+        <div class="meta2" id="meta2">
             <h2 style="text-align: center;">META</h2>
             <p>1 Incorporar mecanismos de parada de emergencia y sensores de límite en el 100 % de los prototipos
                 desarrollados. Primeros 4 meses</p>
@@ -99,7 +175,7 @@
                 oportunidades de mejora. Primeros 12 meses</p>
         </div>
 
-        <div class="meta3">
+        <div class="meta3" id="meta3">
             <h2 style="text-align: center;">META</h2>
             <p>1 Identificar y documentar cinco posibles aplicaciones del transporte por cable en zonas montañosas,
                 turísticas y de difícil acceso. Primeros 3 meses</p>
@@ -113,8 +189,63 @@
             <p>4 Elaborar una propuesta integral de transporte por cable que contemple beneficios de movilidad,
                 integración ambiental y viabilidad técnica. Primeros 12 meses</p>
         </div>
-
     </div>
+
+    <script>
+        let pasoActual = 0; // 0 significa en la bienvenida
+
+        function siguientePaso() {
+            pasoActual++;
+
+            if (pasoActual > 3) {
+                reiniciarVista();
+                return;
+            }
+
+            // Ocultar la bienvenida
+            document.getElementById('seccion-bienvenida').style.display = 'none';
+
+            // Activar contenedores principales en modo centrado
+            document.querySelector('.principal').classList.add('mostrar-activo');
+            document.querySelector('.principal2').classList.add('mostrar-activo');
+
+            // Quitar clases activas anteriores
+            document.querySelectorAll('.principal > div').forEach(el => el.classList.remove('activo-obj'));
+            document.querySelectorAll('.principal2 > div').forEach(el => el.classList.remove('activo-meta'));
+
+            // Mostrar el objetivo y meta correspondientes al orden actual
+            document.getElementById('obj' + pasoActual).classList.add('activo-obj');
+            document.getElementById('meta' + pasoActual).classList.add('activo-meta');
+
+            // Cambiar texto del botón según el paso
+            let btn = document.querySelector('.btn-siguiente');
+            if (pasoActual < 3) {
+                btn.textContent = `Ver Siguiente Objetivo (${pasoActual + 1}/3)`;
+            } else {
+                btn.textContent = `Finalizar / Reiniciar`;
+            }
+
+            // Mover el botón debajo de las metas para que sea accesible
+            document.querySelector('.principal2').after(btn);
+            document.getElementById('btn-reiniciar').style.display = 'block';
+        }
+
+        function reiniciarVista() {
+            pasoActual = 0;
+            document.getElementById('seccion-bienvenida').style.display = 'block';
+            document.querySelector('.principal').classList.remove('mostrar-activo');
+            document.querySelector('.principal2').classList.remove('mostrar-activo');
+            
+            document.querySelectorAll('.principal > div').forEach(el => el.classList.remove('activo-obj'));
+            document.querySelectorAll('.principal2 > div').forEach(el => el.classList.remove('activo-meta'));
+
+            document.getElementById('btn-reiniciar').style.display = 'none';
+            
+            let btn = document.querySelector('.btn-siguiente');
+            btn.textContent = 'Mostrar Primer Objetivo';
+            document.getElementById('seccion-bienvenida').appendChild(btn);
+        }
+    </script>
 </body>
 
 </html>
