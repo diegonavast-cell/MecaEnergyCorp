@@ -1,9 +1,38 @@
+
+:root {
+    --azul-oscuro: #061727;
+    --azul-profundo: #0b1f33;
+    --turquesa: #0093ab;
+    --blanco: #ffffff;
+    --gris-claro: #dce5ed;
+}
+
+/* CONFIGURACIÓN GENERAL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(ellipse at 75% 45%,
+            #123650 0%,
+            var(--azul-profundo) 45%,
+            var(--azul-oscuro) 100%);
+
+    color: var(--blanco);
+    overflow-x: hidden;
+}
+
+/* FONDO */
 .fondo {
     position: fixed;
     top: 0;
@@ -14,36 +43,26 @@
     z-index: -1;
 }
 
-body {
-    min-height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-    background:
-        radial-gradient(ellipse at 75% 45%,
-            #123650 0%,
-            var(--azul-profundo) 45%,
-            var(--azul-oscuro) 100%);
-    color: var(--blanco);
-    overflow-x: hidden;
-}
-
+/* BARRA DE NAVEGACIÓN */
 .barra-navegacion {
     position: relative;
     z-index: 10;
 
     width: 100%;
     min-height: 90px;
-    padding: 12px 6%;
+    padding: 12px 5%;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
 
     background-color: rgba(6, 23, 39, 0.92);
     border-bottom: 1px solid rgba(0, 147, 171, 0.45);
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
 }
 
+/* LOGO */
 .marca {
     display: flex;
     align-items: center;
@@ -57,6 +76,7 @@ body {
     border-radius: 10px;
 }
 
+/* ENLACES */
 .enlaces {
     display: flex;
     justify-content: flex-end;
@@ -74,9 +94,7 @@ body {
     font-weight: bold;
 
     border-radius: 7px;
-    transition:
-        background-color 0.25s ease,
-        color 0.25s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .enlaces a:hover {
@@ -84,89 +102,317 @@ body {
     color: #0b1f33;
 }
 
-
-:root {
-    --azul-oscuro: #061727;
-    --azul-profundo: #0b1f33;
-    --turquesa: #0093ab;
-    --blanco: #ffffff;
-    --gris-claro: #dce5ed;
-}
-
-.principal {
-    display: flex;
-    margin-top: 50px;
-    gap: 20px;
-}
-
-.objetivos {
-    background-color: #0b1f33;
+/* BIENVENIDA */
+.bienvenida-container {
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 10px;
-    padding: 20px;
-    width: 33.33%;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    margin-top: 0;
+    margin: 40px auto;
+    max-width: 700px;
+    width: calc(100% - 40px);
 }
 
-.metas {
-    background-color: #0b1f33;
-    border-radius: 10px;
-    padding: 20px;
-    width: 33.33%;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    margin-top: 0;
+.bienvenida-container h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
 }
 
-.otro {
-    background-color: #0b1f33;
-    border-radius: 10px;
-    padding: 20px;
-    width: 33.33%;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    margin-top: 0;
+.bienvenida-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
 }
 
+/* BOTONES */
+.btn-siguiente {
+    padding: 12px 24px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    max-width: 100%;
+}
+
+.btn-siguiente:hover {
+    background-color: #e68900;
+}
+
+#btn-reiniciar {
+    display: none;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* CONTENEDORES PRINCIPALES */
+.principal,
 .principal2 {
     display: flex;
-    margin-top: 50px;
+    justify-content: center;
+    align-items: stretch;
     gap: 20px;
+    width: 100%;
+    padding: 0 4%;
+    margin-top: 50px;
 }
 
-.meta1 {
-    background-color: #0b1f33;
-    border-radius: 10px;
-    padding: 20px;
-    width: 33.33%;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    margin-top: 0;
-}
-
-.meta2 {
-    background-color: #0b1f33;
-    border-radius: 10px;
-    padding: 20px;
-    width: 33.33%;
-    max-width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    margin-top: 0;
-}
-
+/* CAJAS DE OBJETIVOS Y METAS */
+.objetivos,
+.metas,
+.otro,
+.meta1,
+.meta2,
 .meta3 {
     background-color: #0b1f33;
     border-radius: 10px;
     padding: 20px;
-    width: 33.33%;
+
+    flex: 1 1 0;
+    min-width: 0;
     max-width: 100%;
+
     box-sizing: border-box;
-    margin: 0;
-    margin-top: 0;
+    line-height: 1.6;
+}
+
+.objetivos h2,
+.metas h2,
+.otro h2,
+.meta1 h2,
+.meta2 h2,
+.meta3 h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.objetivos p,
+.metas p,
+.otro p,
+.meta1 p,
+.meta2 p,
+.meta3 p {
+    overflow-wrap: break-word;
+}
+
+/* MOSTRAR OBJETIVOS Y METAS */
+.principal.mostrar-activo,
+.principal2.mostrar-activo {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.principal.mostrar-activo > div.activo-obj,
+.principal2.mostrar-activo > div.activo-meta {
+    display: block !important;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 900px;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+/* BOTÓN DE SIGUIENTE PASO */
+.principal2 + .btn-siguiente {
+    display: block;
+    margin: 25px auto;
+}
+
+/* =================================
+   TABLETS
+================================= */
+
+@media screen and (max-width: 900px) {
+
+    .barra-navegacion {
+        padding: 12px 3%;
+        gap: 12px;
+    }
+
+    .marca img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .enlaces {
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .enlaces a {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .principal,
+    .principal2 {
+        flex-wrap: wrap;
+        padding: 0 3%;
+        gap: 15px;
+    }
+
+    .objetivos,
+    .metas,
+    .otro,
+    .meta1,
+    .meta2,
+    .meta3 {
+        flex: 1 1 calc(50% - 15px);
+    }
+
+    .principal.mostrar-activo > div.activo-obj,
+    .principal2.mostrar-activo > div.activo-meta {
+        width: 90%;
+    }
+}
+
+/* =================================
+   TELEFONOS
+================================= */
+
+@media screen and (max-width: 600px) {
+
+    /* NAVEGACIÓN */
+    .barra-navegacion {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 10px;
+        gap: 12px;
+    }
+
+    .marca img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .enlaces {
+        width: 100%;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .enlaces a {
+        font-size: 12px;
+        padding: 9px 10px;
+    }
+
+    /* BIENVENIDA */
+    .bienvenida-container {
+        width: calc(100% - 30px);
+        margin: 25px auto;
+        padding: 25px 15px;
+    }
+
+    .bienvenida-container h1 {
+        font-size: 23px;
+    }
+
+    .bienvenida-container p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    /* OBJETIVOS Y METAS */
+    .principal,
+    .principal2 {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 15px;
+        margin-top: 25px;
+        gap: 15px;
+    }
+
+    .objetivos,
+    .metas,
+    .otro,
+    .meta1,
+    .meta2,
+    .meta3 {
+        width: 100%;
+        flex: 1 1 100%;
+        padding: 18px;
+    }
+
+    .objetivos p,
+    .metas p,
+    .otro p,
+    .meta1 p,
+    .meta2 p,
+    .meta3 p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .objetivos h2,
+    .metas h2,
+    .otro h2,
+    .meta1 h2,
+    .meta2 h2,
+    .meta3 h2 {
+        font-size: 19px;
+    }
+
+    /* TARJETAS ACTIVAS */
+    .principal.mostrar-activo > div.activo-obj,
+    .principal2.mostrar-activo > div.activo-meta {
+        width: 100%;
+        max-width: 100%;
+        transform: none;
+    }
+
+    /* BOTONES */
+    .btn-siguiente {
+        font-size: 14px;
+        padding: 12px 18px;
+    }
+
+    #btn-reiniciar {
+        font-size: 14px;
+    }
+}
+
+/* =================================
+   TELEFONOS PEQUEÑOS
+================================= */
+
+@media screen and (max-width: 380px) {
+
+    .enlaces {
+        gap: 3px;
+    }
+
+    .enlaces a {
+        font-size: 11px;
+        padding: 8px 7px;
+    }
+
+    .bienvenida-container h1 {
+        font-size: 20px;
+    }
+
+    .bienvenida-container p {
+        font-size: 14px;
+    }
+
+    .objetivos,
+    .metas,
+    .otro,
+    .meta1,
+    .meta2,
+    .meta3 {
+        padding: 15px;
+    }
 }
