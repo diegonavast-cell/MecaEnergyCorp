@@ -89,3 +89,14 @@ if (botonCerrarSesion) {
         window.location.href = "index.html";
     });
 }
+
+const enlaceRegistrar = document.getElementById("registrar");
+
+if (enlaceRegistrar) {
+    enlaceRegistrar.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        document.getElementById("seccionRegistro").style.display = "none";
+        document.getElementById("seccionLogin").style.display = "block";
+    });
+}
