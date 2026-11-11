@@ -1,3 +1,4 @@
+// --- REGISTRO DE USUARIO ---
 document.getElementById("btnRegistrar").addEventListener("click", function() {
     let usuario = document.getElementById("usuarioRegistro").value;
     let contrasena = document.getElementById("contrasenaRegistro").value;
@@ -30,19 +31,22 @@ document.getElementById("btnRegistrar").addEventListener("click", function() {
     };
 
     usuarios.push(nuevoUsuario);
-
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
     alert("Usuario registrado correctamente");
 
+    // Limpiar campos
     document.getElementById("usuarioRegistro").value = "";
     document.getElementById("contrasenaRegistro").value = "";
     document.getElementById("confirmarRegistro").value = "";
 
+    // Cambiar a la vista de login
     document.getElementById("seccionRegistro").style.display = "none";
     document.getElementById("seccionLogin").style.display = "block";
 });
 
+
+// --- INICIO DE SESIÓN ---
 document.getElementById("formLogin").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -56,47 +60,43 @@ document.getElementById("formLogin").addEventListener("submit", function(event) 
     });
 
     if (encontrado) {
-    alert("Inicio de sesión correcto");
-    window.location.href = "inicio.html";
-} else {
-    alert("Usuario o contraseña incorrectos");
-}
+        alert("Inicio de sesión correcto");
+        window.location.href = "inicio.html";
+    } else {
+        alert("Usuario o contraseña incorrectos");
+    }
 });
 
 
-const enlaceInicioSesion = document.getElementById("irInicioSesion");
+// --- NAVEGACIÓN ENTRE VISTAS ---
 
+// Ir de Registro -> Login
+const enlaceInicioSesion = document.getElementById("irInicioSesion");
 if (enlaceInicioSesion) {
     enlaceInicioSesion.addEventListener("click", function (e) {
         e.preventDefault();
-
         document.getElementById("seccionRegistro").style.display = "none";
         document.getElementById("seccionLogin").style.display = "block";
     });
 }
 
-
-const botonCerrarSesion = document.getElementById("cerrarSesion");
-
-if (botonCerrarSesion) {
-    botonCerrarSesion.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        // Eliminar los datos de sesion de este sitio
-        sessionStorage.clear();
-
-        // Volver a la pagina de registro
-        window.location.href = "index.html";
-    });
-}
-
+// Ir de Login -> Registro (CORREGIDO)
 const enlaceRegistrar = document.getElementById("registrar");
-
 if (enlaceRegistrar) {
     enlaceRegistrar.addEventListener("click", function (e) {
         e.preventDefault();
+        document.getElementById("seccionLogin").style.display = "none";      // Oculta el login
+        document.getElementById("seccionRegistro").style.display = "block";  // Muestra el registro
+    });
+}
 
-        document.getElementById("seccionRegistro").style.display = "none";
-        document.getElementById("seccionLogin").style.display = "block";
+
+// --- CERRAR SESIÓN (Para la página de inicio.html) ---
+const botonCerrarSesion = document.getElementById("cerrarSesion");
+if (botonCerrarSesion) {
+    botonCerrarSesion.addEventListener("click", function (e) {
+        e.preventDefault();
+        sessionStorage.clear();
+        window.location.href = "index.html";
     });
 }
