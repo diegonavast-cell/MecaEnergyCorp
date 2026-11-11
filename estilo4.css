@@ -415,4 +415,19 @@ body {
     .meta3 {
         padding: 15px;
     }
+     body {
+        padding-bottom: 70px; 
+    }
+
+    .btn-siguiente {
+        font-size: 14px;
+        padding: 12px 18px;
+        margin-bottom: 30px; /* Sube el botón para separarlo de la insignia de Netlify */
+    }
+
+    #btn-reiniciar {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
 }
