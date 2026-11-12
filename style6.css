@@ -1,8 +1,17 @@
-
 /* =========================================
    MECAENERGYCORP
    PÁGINA: PROYECTO
 ========================================= */
+
+.fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
 
 /* COLORES GENERALES */
 
@@ -28,12 +37,10 @@ html {
 body {
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
-    background: radial-gradient(
-        ellipse at 75% 45%,
-        #123650 0%,
-        var(--azul-profundo) 45%,
-        var(--azul-oscuro) 100%
-    );
+    background: radial-gradient(ellipse at 75% 45%,
+            #123650 0%,
+            var(--azul-profundo) 45%,
+            var(--azul-oscuro) 100%);
     color: var(--blanco);
     overflow-x: hidden;
 }
@@ -354,7 +361,7 @@ img {
     border-radius: 10px;
 }
 
-.proceso-lista article > span {
+.proceso-lista article>span {
     color: var(--naranja);
     font-size: 30px;
     font-weight: bold;
