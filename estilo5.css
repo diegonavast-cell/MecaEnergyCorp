@@ -1,23 +1,54 @@
+
+/* =========================================
+   MECAENERGYCORP
+   PÁGINA DE CONTACTO
+========================================= */
+
+/* COLORES GENERALES */
+
+:root {
+    --azul-oscuro: #061727;
+    --azul-profundo: #0b1f33;
+    --turquesa: #0093ab;
+    --blanco: #ffffff;
+    --gris-claro: #dce5ed;
+    --naranja: orange;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.fondo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+html {
+    scroll-behavior: smooth;
 }
 
-.instagram {
-    padding: 10px;
-    border-radius: 50%;
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            ellipse at 75% 45%,
+            #123650 0%,
+            var(--azul-profundo) 45%,
+            var(--azul-oscuro) 100%
+        );
+
+    color: var(--blanco);
+    overflow-x: hidden;
 }
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* =========================================
+   BARRA DE NAVEGACIÓN
+========================================= */
 
 .barra-navegacion {
     position: relative;
@@ -25,18 +56,17 @@
 
     width: 100%;
     min-height: 90px;
-    padding: 12px 6%;
+    padding: 12px 5%;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 25px;
 
-    background-color: rgba(6, 23, 39, 0.92);
+    background-color: rgba(6, 23, 39, 0.94);
     border-bottom: 1px solid rgba(0, 147, 171, 0.45);
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
 
-    color: white;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
 }
 
 .marca {
@@ -69,18 +99,746 @@
     font-weight: bold;
 
     border-radius: 7px;
-    transition:
-        background-color 0.25s ease,
-        color 0.25s ease;
-}
 
-.enlaces a:hover {
-    background-color: orange;
-    color: #0b1f33;
+    transition: 0.25s ease;
 }
 
 .enlaces a:hover,
 .enlaces a.activo {
-    background-color: orange;
-    color: #0b1f33;
+    background-color: var(--naranja);
+    color: var(--azul-profundo);
+}
+
+/* =========================================
+   PORTADA
+========================================= */
+
+.portada {
+    min-height: 440px;
+    padding: 70px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(6, 23, 39, 0.65),
+            rgba(6, 23, 39, 0.85)
+        );
+}
+
+.portada-contenido {
+    max-width: 850px;
+}
+
+.etiqueta {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    color: #45c8d9;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.portada h1 {
+    font-size: clamp(40px, 6vw, 68px);
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.portada p {
+    max-width: 720px;
+    margin: 0 auto 30px;
+
+    color: var(--gris-claro);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* BOTÓN PRINCIPAL */
+
+.boton-principal {
+    display: inline-block;
+    padding: 15px 30px;
+
+    background-color: var(--naranja);
+    color: var(--azul-profundo);
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    border-radius: 7px;
+
+    transition: 0.3s ease;
+}
+
+.boton-principal:hover {
+    background-color: var(--turquesa);
+    color: var(--blanco);
+    transform: translateY(-4px);
+}
+
+/* =========================================
+   ENCABEZADOS DE SECCIÓN
+========================================= */
+
+.seccion-contacto {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+    padding: 75px 5%;
+}
+
+.encabezado-seccion {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.subtitulo {
+    display: inline-block;
+
+    color: #45c8d9;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.encabezado-seccion h2,
+.formulario-texto h2 {
+    font-size: clamp(28px, 4vw, 38px);
+    margin-bottom: 18px;
+}
+
+.encabezado-seccion p {
+    color: var(--gris-claro);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   TARJETAS DE CONTACTO
+========================================= */
+
+.contenedor-tarjetas {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.tarjeta-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 30px 24px;
+
+    background-color: rgba(11, 31, 51, 0.96);
+
+    border: 1px solid rgba(0, 147, 171, 0.25);
+    border-radius: 14px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition: 0.3s ease;
+}
+
+.tarjeta-contacto:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--turquesa);
+
+    box-shadow: 0 15px 35px rgba(0, 147, 171, 0.15);
+}
+
+/* ICONOS */
+
+.icono-contacto {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    background-color: rgba(0, 147, 171, 0.15);
+
+    border-radius: 15px;
+
+    color: var(--naranja);
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.tarjeta-contacto h3 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-contacto p {
+    color: var(--gris-claro);
+    font-size: 14px;
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+.tarjeta-contacto strong {
+    color: #45c8d9;
+    font-size: 14px;
+
+    margin-bottom: 22px;
+
+    overflow-wrap: anywhere;
+}
+
+.direccion {
+    line-height: 1.6;
+}
+
+/* BOTONES DE TARJETAS */
+
+.boton-tarjeta {
+    display: inline-block;
+
+    padding: 12px 18px;
+
+    background-color: var(--naranja);
+    color: var(--azul-profundo);
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+
+    border-radius: 6px;
+
+    transition: 0.25s ease;
+}
+
+.boton-tarjeta:hover {
+    background-color: var(--turquesa);
+    color: var(--blanco);
+}
+
+.botones-dobles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.boton-whatsapp {
+    background-color: #168f65;
+    color: white;
+}
+
+.boton-whatsapp:hover {
+    background-color: #20b87d;
+    color: white;
+}
+
+/* ICONOS ESPECIALES */
+
+.instagram {
+    color: #e69aaf;
+}
+
+.correo {
+    color: #45c8d9;
+}
+
+.telefono {
+    color: #45c8d9;
+}
+
+.ubicacion {
+    color: var(--naranja);
+}
+
+/* =========================================
+   TARJETA DE UBICACIÓN
+========================================= */
+
+.tarjeta-ubicacion {
+    grid-column: 1 / -1;
+
+    max-width: 850px;
+    width: 100%;
+
+    margin: 15px auto 0;
+}
+
+.mapa {
+    width: 100%;
+    height: 320px;
+
+    overflow: hidden;
+
+    margin: 0 0 22px;
+
+    border-radius: 10px;
+    border: 1px solid rgba(0, 147, 171, 0.4);
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+/* =========================================
+   SECCIÓN DEL FORMULARIO
+========================================= */
+
+.seccion-formulario {
+    max-width: 1300px;
+    width: 90%;
+
+    margin: 30px auto 80px;
+    padding: 45px;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    align-items: center;
+    gap: 55px;
+
+    background-color: rgba(11, 31, 51, 0.96);
+
+    border: 1px solid rgba(0, 147, 171, 0.25);
+    border-radius: 16px;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.formulario-texto h2 {
+    line-height: 1.2;
+}
+
+.formulario-texto p {
+    color: var(--gris-claro);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.detalle-formulario {
+    margin-top: 30px;
+}
+
+.linea-detalle {
+    display: block;
+
+    width: 75px;
+    height: 4px;
+
+    margin-bottom: 15px;
+
+    background: linear-gradient(
+        to right,
+        var(--turquesa),
+        #45c8d9
+    );
+
+    border-radius: 10px;
+}
+
+.detalle-formulario p {
+    color: #45c8d9;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* CAMPOS */
+
+.formulario {
+    width: 100%;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+.campo label {
+    margin-bottom: 9px;
+
+    color: var(--blanco);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    background-color: #061727;
+    color: var(--blanco);
+
+    border: 1px solid rgba(0, 147, 171, 0.35);
+    border-radius: 7px;
+
+    outline: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+
+    transition: 0.25s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: var(--turquesa);
+
+    box-shadow: 0 0 0 3px rgba(0, 147, 171, 0.15);
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #8498a9;
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+/* BOTÓN ENVIAR */
+
+.boton-enviar {
+    width: 100%;
+
+    padding: 15px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--naranja);
+    color: var(--azul-profundo);
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.boton-enviar:hover {
+    background-color: var(--turquesa);
+    color: var(--blanco);
+}
+
+.boton-enviar span {
+    font-size: 23px;
+}
+
+.nota-formulario {
+    margin-top: 15px;
+
+    color: #a9bac8;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* =========================================
+   CIERRE
+========================================= */
+
+.cierre {
+    padding: 75px 8%;
+
+    text-align: center;
+
+    background-color: rgba(6, 23, 39, 0.55);
+
+    border-top: 1px solid rgba(0, 147, 171, 0.25);
+}
+
+.cierre h2 {
+    font-size: clamp(27px, 4vw, 38px);
+    margin-bottom: 20px;
+}
+
+.cierre p {
+    max-width: 750px;
+
+    margin: 0 auto 30px;
+
+    color: var(--gris-claro);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+.pie-pagina {
+    padding: 35px 20px 65px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #04111e;
+
+    text-align: center;
+}
+
+.pie-pagina img {
+    width: 85px;
+    height: 85px;
+
+    object-fit: contain;
+
+    margin-bottom: 18px;
+}
+
+.pie-pagina p {
+    color: var(--gris-claro);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.pie-pagina span {
+    color: var(--naranja);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* =========================================
+   BARRA NARANJA INFERIOR
+========================================= */
+
+.caja-naranja {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 35px;
+
+    background-color: var(--naranja);
+
+    z-index: 10;
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media screen and (max-width: 1000px) {
+
+    .barra-navegacion {
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 12px;
+        padding: 15px 3%;
+    }
+
+    .marca img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .enlaces {
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .enlaces a {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .contenedor-tarjetas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .seccion-formulario {
+        width: 94%;
+        padding: 30px;
+        gap: 30px;
+    }
+}
+
+/* =========================================
+   TELÉFONOS
+========================================= */
+
+@media screen and (max-width: 600px) {
+
+    .barra-navegacion {
+        padding: 12px 14px;
+        gap: 12px;
+    }
+
+    .marca img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .enlaces {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .enlaces a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-height: 40px;
+        padding: 9px 6px;
+
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .portada {
+        min-height: 380px;
+        padding: 55px 20px;
+    }
+
+    .portada h1 {
+        font-size: 40px;
+    }
+
+    .portada p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .seccion-contacto {
+        padding: 55px 18px;
+    }
+
+    .encabezado-seccion h2 {
+        font-size: 28px;
+    }
+
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .tarjeta-contacto {
+        padding: 28px 20px;
+    }
+
+    .tarjeta-ubicacion {
+        grid-column: auto;
+        margin-top: 0;
+    }
+
+    .mapa {
+        height: 250px;
+    }
+
+    .seccion-formulario {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+
+        padding: 25px 20px;
+        gap: 30px;
+
+        margin: 15px auto 55px;
+    }
+
+    .formulario-texto {
+        text-align: center;
+    }
+
+    .linea-detalle {
+        margin: 15px auto;
+    }
+
+    .formulario-texto h2 {
+        font-size: 29px;
+    }
+
+    .formulario-texto p {
+        font-size: 14px;
+    }
+
+    .cierre {
+        padding: 55px 20px;
+    }
+
+    .cierre p {
+        font-size: 14px;
+    }
+
+    .pie-pagina {
+        padding-bottom: 50px;
+    }
+
+    .caja-naranja {
+        height: 20px;
+    }
+}
+
+/* =========================================
+   TELÉFONOS PEQUEÑOS
+========================================= */
+
+@media screen and (max-width: 360px) {
+
+    .enlaces {
+        grid-template-columns: 1fr;
+    }
+
+    .portada h1 {
+        font-size: 34px;
+    }
+
+    .portada p {
+        font-size: 14px;
+    }
+
+    .seccion-formulario {
+        padding: 20px 15px;
+    }
+
+    .tarjeta-contacto h3 {
+        font-size: 19px;
+    }
+
+    .campo input,
+    .campo textarea {
+        padding: 12px;
+    }
+
+    .caja-naranja {
+        height: 18px;
+    }
 }

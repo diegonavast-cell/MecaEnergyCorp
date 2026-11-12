@@ -1,36 +1,357 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contáctanos | MecaEnergyCorp</title>
     <link rel="stylesheet" href="estilo5.css">
 </head>
 
 <body>
-    <img src="img/Góndolas sobre el valle alpino.png" class="fondo" alt="fondo">
-    <nav class="barra-navegacion">
 
-        <a href="#inicio" class="marca" aria-label="Ir al inicio">
-            <img src="img/MecaEnergyCorp_ Conectamos destinos.png" alt="Logo de MecaEnergyCorp" id="logo">
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="barra-navegacion">
+
+        <a href="inicio.html" class="marca">
+            <img src="img/MecaEnergyCorp_ Conectamos destinos.png"
+                 alt="Logo MecaEnergyCorp">
         </a>
 
-        <div class="enlaces">
-            <a href="inicio.html" >Inicio</a>
-            <a href="index3.html">Conocenos</a>
+        <nav class="enlaces">
+            <a href="inicio.html">Inicio</a>
+            <a href="index3.html">Conócenos</a>
             <a href="index4.html">Objetivos y Metas</a>
             <a href="index6.html">Proyecto</a>
             <a href="index7.html">Estrategias</a>
-            <a href="index5.html" class="activo">Contactanos</a>
-            <a href="index.html" id="cerrarSesion">Cerrar sesión</a>
-        </div>
+            <a href="index5.html" class="activo">Contáctanos</a>
+            <a href="index.html">Cerrar sesión</a>
+        </nav>
 
-    </nav>
+    </header>
 
-    <a href="https://www.instagram.com/meca_energy_corp?psln=MzA5Y2c3NzEzdjF3"><img src="img/instagram-6338393_1280.png"
-            alt="instagram" width="300px" height="300px" class="instagram">
-    </a>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- PORTADA -->
+        <section class="portada">
+
+            <div class="portada-contenido">
+                <span class="etiqueta">MECAENERGYCORP</span>
+
+                <h1>Conectamos contigo</h1>
+
+                <p>
+                    Estamos aquí para atender tus consultas, compartir
+                    información sobre nuestro proyecto y mantenernos
+                    en contacto contigo.
+                </p>
+
+                <a href="#contacto" class="boton-principal">
+                    CONTÁCTANOS
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- INFORMACIÓN DE CONTACTO -->
+        <section class="seccion-contacto" id="contacto">
+
+            <div class="encabezado-seccion">
+                <span class="subtitulo">ESTAMOS PARA SERVIRTE</span>
+                <h2>Nuestros medios de contacto</h2>
+
+                <p>
+                    Puedes comunicarte con nosotros a través de cualquiera
+                    de los siguientes medios.
+                </p>
+            </div>
+
+
+            <div class="contenedor-tarjetas">
+
+                <!-- INSTAGRAM -->
+                <article class="tarjeta-contacto">
+
+                    <div class="icono-contacto instagram">
+                        <span>IG</span>
+                    </div>
+
+                    <h3>Instagram</h3>
+
+                    <p>
+                        Síguenos en nuestras redes sociales para conocer
+                        nuestras novedades y actividades.
+                    </p>
+
+                    <strong>@meca_energy_corp</strong>
+
+                    <a
+                        href="https://www.instagram.com/meca_energy_corp?psln=MzA5Y2c3NzEzdjF3"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="boton-tarjeta boton-instagram">
+
+                        Visitar Instagram
+                    </a>
+
+                </article>
+
+
+                <!-- CORREO -->
+                <article class="tarjeta-contacto">
+
+                    <div class="icono-contacto correo">
+                        <span>@</span>
+                    </div>
+
+                    <h3>Correo electrónico</h3>
+
+                    <p>
+                        Escríbenos para solicitar información,
+                        realizar consultas o compartir tus comentarios.
+                    </p>
+
+                    <strong>mecaenergycorp@gmail.com</strong>
+
+                    <a
+                        href="mailto:mecaenergycorp@gmail.com"
+                        class="boton-tarjeta">
+
+                        Enviar correo
+                    </a>
+
+                </article>
+
+
+                <!-- TELÉFONO -->
+                <article class="tarjeta-contacto">
+
+                    <div class="icono-contacto telefono">
+                        <span>☎</span>
+                    </div>
+
+                    <h3>Teléfono</h3>
+
+                    <p>
+                        Comunícate directamente con nosotros
+                        para recibir atención.
+                    </p>
+
+                    <strong>+502 5222 8132</strong>
+
+                    <div class="botones-dobles">
+
+                        <a
+                            href="tel:+50252228132"
+                            class="boton-tarjeta">
+
+                            Llamar
+                        </a>
+
+                        <a
+                            href="https://wa.me/50252228132"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="boton-tarjeta boton-whatsapp">
+
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- UBICACIÓN -->
+                <article class="tarjeta-contacto tarjeta-ubicacion">
+
+                    <div class="icono-contacto ubicacion">
+                        <span>⌖</span>
+                    </div>
+
+                    <h3>Ubicación</h3>
+
+                    <p>
+                        Encuéntranos en nuestra dirección:
+                    </p>
+
+                    <strong class="direccion">
+                        6ta avenida B 7-68, Residenciales Eureka,
+                        zona 21, Guatemala, Guatemala.
+                    </strong>
+
+                    <div class="mapa">
+                        <iframe
+                            src="https://maps.google.com/maps?q=6ta%20avenida%20B%207-68%20Residenciales%20Eureka%2C%20zona%2021%2C%20Guatemala%2C%20Guatemala&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                            title="Ubicación de MecaEnergyCorp"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=6ta%20avenida%20B%207-68%20Residenciales%20Eureka%2C%20zona%2021%2C%20Guatemala%2C%20Guatemala"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="boton-tarjeta">
+
+                        Abrir en Google Maps
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- FORMULARIO -->
+        <section class="seccion-formulario">
+
+            <div class="formulario-texto">
+
+                <span class="subtitulo">HABLEMOS</span>
+
+                <h2>Envíanos un mensaje</h2>
+
+                <p>
+                    ¿Tienes alguna pregunta o deseas conocer más sobre
+                    nuestro proyecto? Completa el siguiente formulario
+                    y podrás enviarnos tu mensaje directamente por WhatsApp.
+                </p>
+
+                <div class="detalle-formulario">
+                    <span class="linea-detalle"></span>
+                    <p>MECAENERGYCORP · CONECTAMOS DESTINOS</p>
+                </div>
+
+            </div>
+
+
+            <form class="formulario" id="formularioContacto">
+
+                <div class="campo">
+                    <label for="nombre">Nombre completo</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Escribe tu nombre"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="ejemplo@correo.com"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label for="asunto">Asunto</label>
+                    <input
+                        type="text"
+                        id="asunto"
+                        name="asunto"
+                        placeholder="Motivo de tu consulta"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        rows="5"
+                        placeholder="Escribe tu mensaje aquí..."
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="boton-enviar">
+                    Enviar mensaje
+                    <span>→</span>
+                </button>
+
+                <p class="nota-formulario">
+                    El mensaje se preparará para enviarse mediante WhatsApp.
+                </p>
+
+            </form>
+
+        </section>
+
+
+        <!-- CIERRE -->
+        <section class="cierre">
+
+            <h2>Gracias por conectar con nosotros</h2>
+
+            <p>
+                En MecaEnergyCorp creemos en el potencial de la energía
+                mecánica para crear soluciones que conecten personas
+                y destinos.
+            </p>
+
+            <a href="inicio.html" class="boton-principal">
+                VOLVER AL INICIO
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+
+        <img
+            src="img/MecaEnergyCorp_ Conectamos destinos.png"
+            alt="MecaEnergyCorp">
+
+        <p>
+            © 2026 MecaEnergyCorp. Todos los derechos reservados.
+        </p>
+
+        <span>Conectamos destinos.</span>
+
+    </footer>
+
+
+    <!-- BARRA INFERIOR -->
+    <div class="caja-naranja"></div>
+
+
+    <!-- FUNCIONAMIENTO DEL FORMULARIO -->
+    <script>
+        const formulario = document.getElementById("formularioContacto");
+
+        formulario.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById("nombre").value;
+            const correo = document.getElementById("correo").value;
+            const asunto = document.getElementById("asunto").value;
+            const mensaje = document.getElementById("mensaje").value;
+
+            const texto =
+                "Hola, soy " + nombre +
+                ". Mi correo es: " + correo +
+                ". Asunto: " + asunto +
+                ". Mensaje: " + mensaje;
+
+            const url = "https://wa.me/50252228132?text=" +
+                encodeURIComponent(texto);
+
+            window.open(url, "_blank");
+        });
+    </script>
+<script src="codigo.js"></script>
 </body>
 
 </html>
