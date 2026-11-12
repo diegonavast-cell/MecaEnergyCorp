@@ -100,3 +100,54 @@ if (botonCerrarSesion) {
         window.location.href = "index.html";
     });
 }
+
+
+
+/* =========================================
+   MECAENERGYCORP
+   FORMULARIO DE CONTACTO
+========================================= */
+
+const formulario = document.getElementById("formularioContacto");
+
+formulario.addEventListener("submit", function(event) {
+
+    // Evitar que la página se recargue
+    event.preventDefault();
+
+    // Obtener los datos del formulario
+    const nombre = document.getElementById("nombre").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+    const asunto = document.getElementById("asunto").value.trim();
+    const mensaje = document.getElementById("mensaje").value.trim();
+
+    // Validar que los campos no estén vacíos
+    if (nombre === "" || correo === "" || asunto === "" || mensaje === "") {
+
+        alert("Por favor, completa todos los campos.");
+
+        return;
+    }
+
+    // Crear el mensaje para WhatsApp
+    const texto =
+        "¡Hola, MecaEnergyCorp!" +
+        "\n\nSoy: " + nombre +
+        "\nMi correo electrónico es: " + correo +
+        "\nAsunto: " + asunto +
+        "\n\nMensaje: " + mensaje;
+
+    // Preparar el enlace de WhatsApp
+    const url = "https://wa.me/50252228132?text=" +
+        encodeURIComponent(texto);
+
+    // Abrir WhatsApp en una nueva pestaña
+    window.open(url, "_blank");
+
+    // Confirmar la preparación del mensaje
+    alert("Tu mensaje está preparado. Ahora puedes enviarlo por WhatsApp.");
+
+    // Limpiar el formulario
+    formulario.reset();
+
+});
