@@ -78,3 +78,9 @@
     background-color: orange;
     color: #0b1f33;
 }
+
+.enlaces a:hover,
+.enlaces a.activo {
+    background-color: orange;
+    color: #0b1f33;
+}
