@@ -1,0 +1,541 @@
+
+/* =========================================
+   MECAENERGYCORP
+   PÁGINA: PROYECTO
+========================================= */
+
+/* COLORES GENERALES */
+
+:root {
+    --azul-oscuro: #061727;
+    --azul-profundo: #0b1f33;
+    --turquesa: #0093ab;
+    --blanco: #ffffff;
+    --gris-claro: #dce5ed;
+    --naranja: orange;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(
+        ellipse at 75% 45%,
+        #123650 0%,
+        var(--azul-profundo) 45%,
+        var(--azul-oscuro) 100%
+    );
+    color: var(--blanco);
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* =========================================
+   NAVEGACIÓN
+========================================= */
+
+.barra-navegacion {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: 90px;
+    padding: 12px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    background-color: rgba(6, 23, 39, 0.94);
+    border-bottom: 1px solid rgba(0, 147, 171, 0.45);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.marca img {
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.enlaces {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.enlaces a {
+    padding: 11px 14px;
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 7px;
+    transition: 0.25s ease;
+}
+
+.enlaces a:hover,
+.enlaces a.activo {
+    background-color: var(--naranja);
+    color: var(--azul-profundo);
+}
+
+/* =========================================
+   CONTENEDOR GENERAL
+========================================= */
+
+.proyecto-page {
+    width: 100%;
+    padding-bottom: 65px;
+}
+
+.proyecto-page section {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 65px 6%;
+}
+
+.proyecto-page h2 {
+    font-size: clamp(27px, 3vw, 38px);
+    margin: 12px 0 22px;
+    color: var(--blanco);
+}
+
+.proyecto-page h3 {
+    color: var(--naranja);
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.proyecto-page p {
+    color: var(--gris-claro);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.proyecto-page .etiqueta {
+    display: inline-block;
+    color: #45c8d9;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   PORTADA
+========================================= */
+
+.proyecto-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+    min-height: 520px;
+}
+
+.proyecto-hero-content {
+    max-width: 580px;
+}
+
+.proyecto-hero h1 {
+    font-size: clamp(45px, 6vw, 75px);
+    color: var(--blanco);
+    margin: 15px 0;
+    letter-spacing: -2px;
+}
+
+.proyecto-hero h2 {
+    color: #16b4c8;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.proyecto-hero-image {
+    width: 100%;
+    border: 1px solid rgba(0, 147, 171, 0.4);
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(3, 17, 30, 0.55);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.proyecto-hero-image img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+}
+
+.btn-proyecto {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 25px;
+    background-color: var(--naranja);
+    color: var(--azul-profundo);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+
+.btn-proyecto:hover {
+    background-color: #45c8d9;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   DESCRIPCIÓN
+========================================= */
+
+.proyecto-descripcion {
+    background-color: rgba(11, 31, 51, 0.85);
+    border-top: 1px solid rgba(0, 147, 171, 0.2);
+    border-bottom: 1px solid rgba(0, 147, 171, 0.2);
+    border-radius: 12px;
+}
+
+.proyecto-descripcion p {
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   ESCENARIOS
+========================================= */
+
+.escenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.escenario-card {
+    background-color: rgba(11, 31, 51, 0.96);
+    border: 1px solid rgba(0, 147, 171, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.escenario-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--naranja);
+}
+
+.escenario-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.escenario-card h3,
+.escenario-card p {
+    margin: 18px;
+}
+
+/* =========================================
+   FUNCIONAMIENTO
+========================================= */
+
+.funcionamiento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.funcionamiento-card {
+    padding: 25px;
+    background-color: rgba(11, 31, 51, 0.96);
+    border: 1px solid rgba(0, 147, 171, 0.3);
+    border-radius: 12px;
+}
+
+.numero {
+    display: inline-block;
+    color: var(--naranja);
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.nota-tecnica {
+    margin-top: 25px;
+    padding: 18px;
+    border-left: 4px solid var(--naranja);
+    background-color: rgba(11, 31, 51, 0.8);
+}
+
+/* =========================================
+   ENERGÍA MECÁNICA
+========================================= */
+
+.energia-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.energia-card,
+.energia-destacada {
+    padding: 25px;
+    background-color: rgba(11, 31, 51, 0.96);
+    border: 1px solid rgba(0, 147, 171, 0.3);
+    border-radius: 12px;
+}
+
+.energia-destacada {
+    margin-top: 22px;
+    border-left: 4px solid var(--naranja);
+}
+
+/* =========================================
+   COMPONENTES
+========================================= */
+
+.componentes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.componente-card {
+    padding: 22px;
+    background-color: rgba(11, 31, 51, 0.96);
+    border: 1px solid rgba(0, 147, 171, 0.3);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.componente-card:hover {
+    border-color: var(--naranja);
+    transform: translateY(-4px);
+}
+
+/* =========================================
+   PROCESO DE CONSTRUCCIÓN
+========================================= */
+
+.proceso-lista {
+    display: grid;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.proceso-lista article {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    padding: 22px;
+    background-color: rgba(11, 31, 51, 0.96);
+    border: 1px solid rgba(0, 147, 171, 0.25);
+    border-radius: 10px;
+}
+
+.proceso-lista article > span {
+    color: var(--naranja);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* =========================================
+   GALERÍA
+========================================= */
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 147, 171, 0.35);
+    transition: 0.3s;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.03);
+    border-color: var(--naranja);
+}
+
+/* =========================================
+   RESULTADO FINAL
+========================================= */
+
+.proyecto-resultado {
+    text-align: center;
+    background-color: rgba(11, 31, 51, 0.9);
+    border-top: 1px solid rgba(0, 147, 171, 0.3);
+}
+
+.proyecto-resultado p {
+    max-width: 850px;
+    margin: auto;
+}
+
+/* =========================================
+   BARRA INFERIOR
+========================================= */
+
+.caja-naranja {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background-color: var(--naranja);
+    z-index: 10;
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media screen and (max-width: 1000px) {
+
+    .proyecto-page section {
+        padding: 45px 4%;
+    }
+
+    .funcionamiento-grid,
+    .componentes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .escenarios-grid,
+    .energia-grid {
+        gap: 15px;
+    }
+
+    .proyecto-hero {
+        gap: 25px;
+    }
+
+}
+
+/* =========================================
+   TELÉFONOS
+========================================= */
+
+@media screen and (max-width: 600px) {
+
+    .barra-navegacion {
+        flex-direction: column;
+        padding: 12px 14px;
+        gap: 12px;
+    }
+
+    .marca img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .enlaces {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .enlaces a {
+        padding: 9px 6px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .proyecto-page section {
+        padding: 38px 18px;
+    }
+
+    .proyecto-hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .proyecto-hero h1 {
+        font-size: 44px;
+    }
+
+    .proyecto-hero-image img {
+        height: 240px;
+    }
+
+    .escenarios-grid,
+    .funcionamiento-grid,
+    .energia-grid,
+    .componentes-grid,
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .escenario-card img {
+        height: 220px;
+    }
+
+    .galeria-grid img {
+        height: 230px;
+    }
+
+    .proceso-lista article {
+        gap: 14px;
+        padding: 18px;
+    }
+
+    .proyecto-page p {
+        font-size: 14px;
+    }
+
+    .caja-naranja {
+        height: 20px;
+    }
+
+}
+
+/* =========================================
+   TELÉFONOS PEQUEÑOS
+========================================= */
+
+@media screen and (max-width: 360px) {
+
+    .enlaces a {
+        font-size: 10px;
+        padding: 8px 5px;
+    }
+
+    .proyecto-page section {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .proyecto-hero h1 {
+        font-size: 36px;
+    }
+
+}
